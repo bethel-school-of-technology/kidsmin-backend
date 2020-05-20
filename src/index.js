@@ -4,6 +4,23 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const mysql = require('mysql'); 
+
+var connection = mysql.createConnection({
+  host: 'localhost', 
+  user: 'root',
+  password: 'admin12345',
+  database: 'ProjectApp'
+}); 
+
+connection.connect(function(err){
+  if(err) {
+    console.log(err); 
+  } else 
+  console.log ("We are connected to our database"); 
+})
+
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
