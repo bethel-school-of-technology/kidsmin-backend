@@ -11,8 +11,8 @@ router.get('/', function(req, res, next) {
 
 /* GET ONE */
 router.get('/:id', function(req, res, next) {
-    models.members.findByPK(parseInt(req.params.id)).then(members =>{
-      res.json(members)
+    models.members.findByPk(parseInt(req.params.id)).then(post =>{
+      res.json(post)
     })
   });
 

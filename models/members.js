@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const members = sequelize.define('members', {
     idmembers: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true 
     },
