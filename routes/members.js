@@ -9,31 +9,38 @@ router.get('/', function(req, res, next) {
     })
 });
 
-/* GET ONE */
-router.get('/:id', function(req, res, next) {
-    models.members.findByPk(parseInt(req.params.id)).then(post =>{
+
+    models.members.findByPk(parseInt(req.params.id)).then(post => {
+
       res.json(post)
     })
   });
-
   
   /* CREATE */
 router.post('/', function(req, res, next) {
     models.members.create(req.body).then(() => {
-      res.json({message: 'created post'})
+      res.json({ message: "create post"  })
     })
     });
 
-
   /* UPDATE */
-router.put('/', function(req, res, next) {
-    res.send("Update");
+router.put('/:id', function(req, res) {
+    let idmembers = req.params.id;
+    models.members
+    .update(req.body,{where: { idmembers: idmembers }})
+    .then(result => {res.send("Update")}
+    );
   });
 
   /* DELETE */
-router.delete('/', function(req, res, next) {
-    res.send("Delete");
-  });
+  router.delete('/:id', function(req, res) {
+    models.members.findByPk(req.params.id)
+    .then(member=>{
+    member.destroy().then(()=>res.send("Delete"))  
+    })
+  })
+    
+     
 
 
 module.exports = router;
