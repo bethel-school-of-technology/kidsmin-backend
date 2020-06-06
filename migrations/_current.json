@@ -1,0 +1,87 @@
+{
+    "tables": {
+        "members": {
+            "tableName": "members",
+            "schema": {
+                "idmembers": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "idmembers",
+                    "seqType": "Sequelize.INTEGER(5)"
+                },
+                "firstName": {
+                    "allowNull": false,
+                    "field": "firstName",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "lastName": {
+                    "allowNull": false,
+                    "field": "lastName",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "guardianNameFirst": {
+                    "allowNull": false,
+                    "field": "guardianNameFirst",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "guardianLastName": {
+                    "allowNull": false,
+                    "field": "guardianLastName",
+                    "seqType": "Sequelize.STRING(45)"
+                },
+                "guardianPhone": {
+                    "allowNull": false,
+                    "field": "guardianPhone",
+                    "seqType": "Sequelize.INTEGER(10)"
+                },
+                "membersAge": {
+                    "allowNull": false,
+                    "field": "membersAge",
+                    "seqType": "Sequelize.INTEGER(3)"
+                },
+                "attendance": {
+                    "allowNull": false,
+                    "default": false,
+                    "field": "attendance",
+                    "seqType": "Sequelize.BOOLEAN"
+                }
+            },
+            "indexes": []
+        },
+        "users": {
+            "tableName": "users",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "userName": {
+                    "allowNull": false,
+                    "field": "userName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "password": {
+                    "allowNull": false,
+                    "field": "password",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}

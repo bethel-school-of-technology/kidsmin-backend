@@ -2,34 +2,39 @@
 module.exports = (sequelize, DataTypes) => {
   const members = sequelize.define('members', {
     idmembers: {
-      type: DataTypes.STRING (5),
-      allowNull: true,
+      type: DataTypes.INTEGER (5),
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
     firstName: {
       type: DataTypes.STRING(45),
-      allowNull: true
+      allowNull: false
     },
     lastName: {
       type: DataTypes.STRING(45),
-      allowNull: true
+      allowNull: false
     },
     guardianNameFirst: {
       type: DataTypes.STRING(45),
-      allowNull: true
+      allowNull: false
     },
     guardianLastName: {
       type: DataTypes.STRING(45),
-      allowNull: true
+      allowNull: false
     },
     guardianPhone: {
       type: DataTypes.INTEGER(10),
-      allowNull: true
+      allowNull: false
     },
     membersAge: {
       type: DataTypes.INTEGER(3),
-      allowNull: true
+      allowNull: false
+    },
+    attendance: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      default: false
     }
   }, {
     timestamps: false
