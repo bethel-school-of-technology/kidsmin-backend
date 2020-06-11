@@ -7,10 +7,18 @@ router.get('/', function(req, res, next) {
     models.members.findAll().then(members =>{
       res.json(members)
     })
-});
+  }); 
+
+/* GET ONE */
+router.get('/:id', function(req, res, next) {
+    models.members.findByPk(parseInt(req.params.id)).then(post => {
+      res.json(post)
+    })
+  });
 
 
-  
+
+
   /* CREATE */
 router.post('/', function(req, res, next) {
     models.members.create(req.body).then(() => {
