@@ -7,7 +7,8 @@ router.get('/', function(req, res, next) {
     models.members.findAll().then(members =>{
       res.json(members)
     })
-});
+  }); 
+
 
 /* GET ALL */
 router.get('/count', function(req, res, next) {
@@ -22,7 +23,9 @@ router.get('/:id', function(req, res, next) {
       res.json(post)
     })
   });
-  
+
+
+
   /* CREATE */
 router.post('/', function(req, res, next) {
     models.members.create(req.body).then(() => {
