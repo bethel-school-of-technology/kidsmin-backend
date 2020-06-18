@@ -9,6 +9,13 @@ router.get('/', function(req, res, next) {
     })
 });
 
+/* GET ALL */
+router.get('/count', function(req, res, next) {
+  models.members.findAll().then(members =>{
+    res.json({count: members.length})
+  })
+});
+
 /* GET ONE */
 router.get('/:id', function(req, res, next) {
     models.members.findByPk(parseInt(req.params.id)).then(post => {
@@ -19,7 +26,7 @@ router.get('/:id', function(req, res, next) {
   /* CREATE */
 router.post('/', function(req, res, next) {
     models.members.create(req.body).then(() => {
-      res.json({ message: "create post"  })
+      res.json({ message: "created post"  })
     })
     });
 

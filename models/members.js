@@ -33,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     attendance: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
       default: false
     }
   }, {
