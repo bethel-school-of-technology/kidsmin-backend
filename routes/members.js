@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
     })
   }); 
 
-<<<<<<< HEAD
 
 /* GET ALL */
 router.get('/count', function(req, res, next) {
@@ -18,8 +17,6 @@ router.get('/count', function(req, res, next) {
   })
 });
 
-=======
->>>>>>> ElijahTestBranch
 /* GET ONE */
 router.get('/:id', function(req, res, next) {
     models.members.findByPk(parseInt(req.params.id)).then(post => {
