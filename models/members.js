@@ -2,10 +2,12 @@
 module.exports = (sequelize, DataTypes) => {
   const members = sequelize.define('members', {
     idmembers: {
+
       type: DataTypes.INTEGER (5),
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
+
     },
     firstName: {
       type: DataTypes.STRING(45),
